@@ -17,7 +17,7 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
+    - python >=3
     - pip
     - cython
     - numpy
@@ -25,7 +25,7 @@ requirements:
     - cem
 
   run:
-    - python
+    - python >=3
     - {{ pin_compatible('numpy') }}
     - cem
 
