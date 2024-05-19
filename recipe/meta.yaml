@@ -9,7 +9,7 @@ source:
   sha256: aad2cd9bc165979dd410a0eba2ad14037d77b24cc69a963ba683878e5c21aaff
 
 build:
-  number: 6
+  number: 7
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
   skip: True  # [win or py2k]
 
@@ -20,6 +20,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -30,7 +31,6 @@ requirements:
 
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - cem
 
 test:
