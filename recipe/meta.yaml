@@ -12,6 +12,7 @@ build:
   number: 6
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
   skip: True  # [win or py2k]
+  skip: true  # [py<310]
 
 requirements:
   build:
